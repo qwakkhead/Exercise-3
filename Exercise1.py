@@ -1,17 +1,21 @@
-result1 = []
+class NumberProcessor:
+    def __init__(self, numbers):
+        self.numbers = numbers
+        self.results = []
 
-for x in [2, 4, 3]:
-    if x % 2 != 0:
-        answer = x**2
-        result1.append(answer)
+    def process_numbers(self):
+        for x in self.numbers:
+            if x % 2 != 0:
+                self.results.append(x ** 2)
 
-print(result1)
+    def get_results(self):
+        return self.results
 
-result2 = []
 
-for x in [0, 0, 1, 1]:
-    if x % 2 != 0:
-        answer2 = x**2
-        result2.append(answer2)
+processor1 = NumberProcessor([2, 4, 3])
+processor1.process_numbers()
+print(processor1.get_results())
 
-print(result2)
+processor2 = NumberProcessor([0, 0, 1, 1])
+processor2.process_numbers()
+print(processor2.get_results())
